@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="pagetitle">
+        <div class="pagetitle-overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>Validation des saisies d'observations</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-50"></div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>Nom de l'observateur</th>
+                        <th>Nom de l'espèce</th>
+                        <th>Date de l'observation</th>
+                        <th>Type saisie</th>
+                        <th>Voir</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Mark47</td>
+                        <td>Caille des blés</td>
+                        <td>01/01/2017</td>
+                        <td>Rapide</td>
+                        <td><a href="{{ path('validations_saisies') }}" type="button" class="btn btn-xs btn-primary">Voir<span><i class="fa fa-chevron-right"></i></span></a></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Toto88</td>
+                        <td>Caille des blés</td>
+                        <td>03/01/2017</td>
+                        <td>Complete</td>
+                        <td><a href="{{ path('validations_saisies_complete') }}" type="button" class="btn btn-xs btn-primary">Voir<span><i class="fa fa-chevron-right"></i></span></a></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Bernard</td>
+                        <td>Perdrix gambra </td>
+                        <td>01/02/2017</td>
+                        <td>Rapide</td>
+                        <td><a href="{{ path('validations_saisies') }}" type="button" class="btn btn-xs btn-primary">Voir<span><i class="fa fa-chevron-right"></i></span></a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-30"></div>
+
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <ul class="pagination">
+                <li><a href="#">«</a></li>
+                <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">»</a></li>
+            </ul>
+        </div>
+    </div>
+
+{% endblock %}

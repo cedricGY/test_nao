@@ -1,0 +1,105 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="pagetitle">
+        <div class="pagetitle-overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>Validation des saisies</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-50"></div>
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-6 col-md-offset-3 block-validation center-block-validation">
+                <div class="img-validation-saisie">
+                    <figure class="effect-phoebe"> <img src="images/features/photobox1-thumb.jpg" alt="">
+                        <figcaption>
+                            <p> <a class="nivo-lightbox" href="" title="This is an image title"><i class="fa fa-search effect-3"></i></a> </p>
+                        </figcaption>
+                    </figure>
+
+                </div>
+                <div class="img-validation-saisie-content">
+                    <h3>Saisie n°2</h3>
+                    <p>Type de saisie : Compléte</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="panel-body panel-grey">
+                    <p>Famille : lorem lipsum</p>
+                    <p>Nom de l'espèce : lorem lipsum</p>
+                    <p>Date de l'observation : lorem lipsum</p>
+                    <p>Coordonnées</p>
+                    <p>Latitude : xxxxxxxx</p>
+                    <p>Longitude : xxxxxxxx</p>
+                    <p>Nombre : 22</p>
+                    <p>Saison : été</p>
+                    <p>Précipitations : lorem lipsum</p>
+                    <p>Météo : lorem lipsum</p>
+                    <p>Période : lorem lipsum</p>
+                    <p>Environnement : lorem lipsum</p>
+                    <p>Comportement : lorem lipsum</p>
+                    <p>Sensibilité : lorem lipsum</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-20"></div>
+
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <h3>Validation de la fiche d'observations</h3>
+                <div class="titleline"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox"> <i class="fa fa-map-marker" aria-hidden="true"></i> Afficher la localisation <i class="fa fa-info-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="Information...."></i>
+                    </label>
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-md-1 col-xs-6 col-md-offset-3">
+                Je valide ?
+            </div>
+            <div class="col-md-3 col-xs-3">
+                <div class="valideSaisie">
+                    <input type="checkbox" value="non" id="valideSaisie" name="check" />
+                    <label for="valideSaisie"></label>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="form-group">
+                    <label for="">Laisser un commentaire :</label>
+                    <textarea class="form-control" rows="3"></textarea>
+                </div>
+                <input class="submit btn btn-theme pull-left" name="submit" type="submit" value="Envoyer">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-50"></div>
+
+{% endblock %}

@@ -1,0 +1,87 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="pagetitle">
+        <div class="pagetitle-overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>Contact</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="mb-30"></div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="contactform">
+                    <h3>Formulaire de contact</h3>
+                    <div class="titleline"></div>
+
+                    <form class="commentForm2 cmxform" method="post" action="http://www.colorsthemes.com/villino/contact2.php">
+                        <fieldset>
+
+                            <label>Nom <i class="fa fa-asterisk"></i></label>
+                            <input class="form-control" name="name" minlength="2" type="text" placeholder="Ex: Dupont" required>
+
+                            <label>E-mail <i class="fa fa-asterisk"></i></label>
+                            <input class="form-control" type="email" name="email" placeholder="Ex: canaris@oiseaux.fr" required>
+
+                            <label for="phone">Téléphone</label>
+                            <input class="form-control" name="phone" type="number">
+
+                            <label>Sujet <i class="fa fa-asterisk"></i></label>
+                            <input class="form-control" type="text" name="subject" placeholder="Ex: Information sur votre site" required>
+
+                            <label>Message <i class="fa fa-asterisk"></i></label>
+                            <textarea class="form-control" name="comment" placeholder="Message" required></textarea>
+
+                            <input class="submit btn btn-theme" name="submit" type="submit" value="Envoyer">
+                        </fieldset>
+                    </form>
+                    <div class="message2"></div>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="col-md-4">
+                <div class="sidebar">
+                    <h3>Information de contact</h3>
+                    <div class="titleline"></div>
+
+
+                    <ul class="sidebar-info">
+                        <li><i class="fa fa-map-marker"></i><span>Adresse:</span><br>
+                            8B Quartier de la galoperie 59186 Anor</li>
+                        <li><i class="fa fa-phone"></i><span>Téléhpone:</span><br>
+                            +33 3 01 02 03 04</li>
+                        <li><i class="fa fa-envelope"></i><span>E-mail:</span><br>
+                            <a href="mailto:#">contact@oiseaux.fr</a></li>
+                    </ul>
+                    <div class="clearfix"></div>
+                    <ul class="social-icons social-color">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-flickr"></i></a></li>
+                        <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+{% endblock %}

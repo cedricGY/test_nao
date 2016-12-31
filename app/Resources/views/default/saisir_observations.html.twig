@@ -1,0 +1,86 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="pagetitle">
+        <div class="pagetitle-overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>Saisie d'observations</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-50"></div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dignissimos fugit laboriosam molestiae nulla placeat repudiandae! Aliquid consectetur eaque eius inventore libero praesentium quam quibusdam, repellat repudiandae saepe sapiente, veniam!</p>
+            </div>
+        </div>
+
+        <div class="mb-20"></div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center">
+                <button id="saisie_rapide"  class="btn btn-primary" disabled>Saisie rapide</button>
+                <button id="saisie_complete" class="btn btn-primary">Saisie complète</button>
+            </div>
+        </div>
+
+        <div class="mb-30"></div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-8 col-md-offset-2" id="observation">
+
+                    <div class="form-saisie-rapide">
+
+                        <div class="well">
+
+                            <h3 class="text-center">Formulaire de saisie rapide</h3>
+
+                            <div class="form-group">
+                                <label>Nom de l'espèces *</label>
+                                <input class="form-control" type="text" name="Lorem" placeholder="Ex: Lorem" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Date *</label>
+                                <input class="form-control" type="text" name="Lorem" placeholder="Ex: Lorem" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Coordonnées *</label>
+                                <input class="form-control" type="text" name="Lorem" placeholder="Ex: Lorem" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Nombre</label>
+                                <input class="form-control" type="number" name="Lorem" placeholder="Ex: Lorem" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Votre photo</label>
+                                <input class="form-control" type="file" name="Lorem" placeholder="Ex: Lorem" required>
+                            </div>
+
+                            <div class="form-group">
+                                <button class="submit btn btn-theme pull-right" name="submit" type="submit">Envoyer</button>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-20"></div>
+    </div>
+
+{% endblock %}
