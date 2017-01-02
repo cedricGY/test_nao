@@ -4946,3 +4946,11 @@ input.checkbox { border: none; }
 	padding-top: 30px;
 	border-bottom: 1px solid black;
 }
+
+.ul-fiche-espece li{
+	list-style-type: none;
+}
+
+.fiche-color{
+	color: #FFFFFF;
+}

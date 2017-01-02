@@ -1,0 +1,120 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="pagetitle">
+        <div class="pagetitle-overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>Mon carnet de terrain</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-50"></div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dignissimos fugit laboriosam molestiae nulla placeat repudiandae! Aliquid consectetur eaque eius inventore libero praesentium quam quibusdam, repellat repudiandae saepe sapiente, veniam!</p>
+            </div>
+        </div>
+
+        <div class="row text-center">
+            <div class="col-md-8 col-md-offset-2">
+                <button type="text" id="profil" class="btn btn-blue-nao">Profil</button>
+                <button type="text" id="saisie" class="btn btn-white-b">Saisies</button>
+                <button type="text" id="attente" class="btn btn-white-b">En attente</button>
+            </div>
+        </div>
+
+        <div class="mb-30"></div>
+
+        <div id="content">
+
+            <div class="row" id="profil">
+
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="panel-body panel-profil">
+
+                        <p><i class="fa fa-user fa-3x"></i> Nom prénom</p>
+                        <p><i class="fa fa-mail-reply fa-3x"></i>toto@gmail.com</p>
+                        <p><i class="fa fa-lock fa-3x"></i> page</p>
+
+                    </div>
+                </div>
+                <div class="col-md-3 right-text">
+                    <h4>  Ami des oiseaux <i class="fa fa-binoculars"></i></h4>
+                </div>
+
+
+
+            </div>
+
+            {#<div class="col-md-6 col-md-offset-3">#}
+            {#<div class="panel panel-default">#}
+
+            {#<div class="panel-leftheading">#}
+            {#<h3 class="panel-lefttitle">Panel title</h3>#}
+            {#</div>#}
+            {#<div class="panel-rightbody">#}
+            {#<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>#}
+            {#<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>#}
+            {#</div>#}
+            {#<div class="clearfix">#}
+            {#</div>#}
+            {#</div>#}
+            {#</div>#}
+
+        </div>
+
+    </div>
+
+    <div class="mb-50"></div>
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        /* ----------------------------------------------------------------------
+         Carnet de terrain
+         ---------------------------------------------------------------------- */
+        $('#profil').on('click', function () {
+            $('#saisie-visu').remove();
+            $('#attente-visu').remove();
+
+            $('#profil').attr('disabled','disabled');
+            $('#saisie').removeAttr('disabled');
+            $('#attente').removeAttr('disabled');
+
+            $('#content').append("<div id='profil-visu'><h1>profil</h1></div>");
+        });
+
+        $('#saisie').on('click', function () {
+            $('#attente-visu').remove();
+            $('#profil-visu').remove();
+
+            $('#saisie').attr('disabled','disabled');
+            $('#profil').removeAttr('disabled');
+            $('#attente').removeAttr('disabled');
+
+            $('#content').append('<div class="row" id="saisie-visu"> <div class="row"> <div class="col-md-3 col-sm-6 col-xs-12"> <div class="birds"> <figure class="effect-phoebe"> <img src="{{ asset('images/birds/1.jpg') }}" alt=""/> <figcaption> <p> <a class="nivo-lightbox" href="{{ asset('images/birds/1.jpg') }}" title="This is an image title"><i class="fa fa-search effect-3"></i></a> </p> </figcaption> </figure> <div class="clearfix"></div> <div class="birds-content"> <h4 data-toggle="tooltip" data-placement="top" title="Lorem ipsum">Lorem ipsum<br> <small>Odontophoridae</small></h4> <p>Lorem ipsum dolor sit amet.</p> <div class="clearfix"></div> </div> </div> </div> <div class="col-md-3 col-sm-6 col-xs-12"> <div class="birds"> <figure class="effect-phoebe"> <img src="{{ asset('images/birds/1.jpg') }}" alt=""/> <figcaption> <p> <a class="nivo-lightbox" href="{{ asset('images/birds/1.jpg') }}" title="This is an image title"><i class="fa fa-search effect-3"></i></a> </p> </figcaption> </figure> <div class="clearfix"></div> <div class="birds-content"> <h4 data-toggle="tooltip" data-placement="top" title="Lorem ipsum">Lorem ipsum<br> <small>Odontophoridae</small></h4> <p>Lorem ipsum dolor sit amet.</p> <div class="clearfix"></div> </div> </div> </div> <div class="col-md-3 col-sm-6 col-xs-12"> <div class="birds"> <figure class="effect-phoebe"> <img src="{{ asset('images/birds/1.jpg') }}" alt=""/> <figcaption> <p> <a class="nivo-lightbox" href="{{ asset('images/birds/1.jpg') }}" title="This is an image title"><i class="fa fa-search effect-3"></i></a> </p> </figcaption> </figure> <div class="clearfix"></div> <div class="birds-content"> <h4 data-toggle="tooltip" data-placement="top" title="Lorem ipsum">Lorem ipsum<br> <small>Odontophoridae</small></h4> <p>Lorem ipsum dolor sit amet.</p> <div class="clearfix"></div> </div> </div> </div> <div class="col-md-3 col-sm-6 col-xs-12"> <div class="birds"> <figure class="effect-phoebe"> <img src="{{ asset('images/birds/1.jpg') }}" alt=""/> <figcaption> <p> <a class="nivo-lightbox" href="{{ asset('images/birds/1.jpg') }}" title="This is an image title"><i class="fa fa-search effect-3"></i></a> </p> </figcaption> </figure> <div class="clearfix"></div> <div class="birds-content"> <h4 data-toggle="tooltip" data-placement="top" title="Lorem ipsum">Lorem ipsum<br> <small>Odontophoridae</small></h4> <p>Lorem ipsum dolor sit amet.</p> <div class="clearfix"></div> </div> </div> </div> </div> <div class="row"> <div class="col-md-3 col-sm-6 col-xs-12"> <div class="birds"> <figure class="effect-phoebe"> <img src="{{ asset('images/birds/1.jpg') }}" alt=""/> <figcaption> <p> <a class="nivo-lightbox" href="{{ asset('images/birds/1.jpg') }}" title="This is an image title"><i class="fa fa-search effect-3"></i></a> </p> </figcaption> </figure> <div class="clearfix"></div> <div class="birds-content"> <h4 data-toggle="tooltip" data-placement="top" title="Lorem ipsum">Lorem ipsum<br> <small>Odontophoridae</small></h4> <p>Lorem ipsum dolor sit amet.</p> <div class="clearfix"></div> </div> </div> </div> <div class="col-md-3 col-sm-6 col-xs-12"> <div class="birds"> <figure class="effect-phoebe"> <img src="{{ asset('images/birds/1.jpg') }}" alt=""/> <figcaption> <p> <a class="nivo-lightbox" href="{{ asset('images/birds/1.jpg') }}" title="This is an image title"><i class="fa fa-search effect-3"></i></a> </p> </figcaption> </figure> <div class="clearfix"></div> <div class="birds-content"> <h4 data-toggle="tooltip" data-placement="top" title="Lorem ipsum">Lorem ipsum<br> <small>Odontophoridae</small></h4> <p>Lorem ipsum dolor sit amet.</p> <div class="clearfix"></div> </div> </div> </div> <div class="col-md-3 col-sm-6 col-xs-12"> <div class="birds"> <figure class="effect-phoebe"> <img src="{{ asset('images/birds/1.jpg') }}" alt=""/> <figcaption> <p> <a class="nivo-lightbox" href="{{ asset('images/birds/1.jpg') }}" title="This is an image title"><i class="fa fa-search effect-3"></i></a> </p> </figcaption> </figure> <div class="clearfix"></div> <div class="birds-content"> <h4 data-toggle="tooltip" data-placement="top" title="Lorem ipsum">Lorem ipsum<br> <small>Odontophoridae</small></h4> <p>Lorem ipsum dolor sit amet.</p> <div class="clearfix"></div> </div> </div> </div> <div class="col-md-3 col-sm-6 col-xs-12"> <div class="birds"> <figure class="effect-phoebe"> <img src="{{ asset('images/birds/1.jpg') }}" alt=""/> <figcaption> <p> <a class="nivo-lightbox" href="{{ asset('images/birds/1.jpg') }}" title="This is an image title"><i class="fa fa-search effect-3"></i></a> </p> </figcaption> </figure> <div class="clearfix"></div> <div class="birds-content"> <h4 data-toggle="tooltip" data-placement="top" title="Lorem ipsum">Lorem ipsum<br> <small>Odontophoridae</small></h4> <p>Lorem ipsum dolor sit amet.</p> <div class="clearfix"></div> </div> </div> </div> </div> <div class="row"> <div class="col-md-3 col-sm-6 col-xs-12"> <div class="birds"> <figure class="effect-phoebe"> <img src="{{ asset('images/birds/1.jpg') }}" alt=""/> <figcaption> <p> <a class="nivo-lightbox" href="{{ asset('images/birds/1.jpg') }}" title="This is an image title"><i class="fa fa-search effect-3"></i></a> </p> </figcaption> </figure> <div class="clearfix"></div> <div class="birds-content"> <h4 data-toggle="tooltip" data-placement="top" title="Lorem ipsum">Lorem ipsum<br> <small>Odontophoridae</small></h4> <p>Lorem ipsum dolor sit amet.</p> <div class="clearfix"></div> </div> </div> </div> <div class="col-md-3 col-sm-6 col-xs-12"> <div class="birds"> <figure class="effect-phoebe"> <img src="{{ asset('images/birds/1.jpg') }}" alt=""/> <figcaption> <p> <a class="nivo-lightbox" href="{{ asset('images/birds/1.jpg') }}" title="This is an image title"><i class="fa fa-search effect-3"></i></a> </p> </figcaption> </figure> <div class="clearfix"></div> <div class="birds-content"> <h4 data-toggle="tooltip" data-placement="top" title="Lorem ipsum">Lorem ipsum<br> <small>Odontophoridae</small></h4> <p>Lorem ipsum dolor sit amet.</p> <div class="clearfix"></div> </div> </div> </div> <div class="col-md-3 col-sm-6 col-xs-12"> <div class="birds"> <figure class="effect-phoebe"> <img src="{{ asset('images/birds/1.jpg') }}" alt=""/> <figcaption> <p> <a class="nivo-lightbox" href="{{ asset('images/birds/1.jpg') }}" title="This is an image title"><i class="fa fa-search effect-3"></i></a> </p> </figcaption> </figure> <div class="clearfix"></div> <div class="birds-content"> <h4 data-toggle="tooltip" data-placement="top" title="Lorem ipsum">Lorem ipsum<br> <small>Odontophoridae</small></h4> <p>Lorem ipsum dolor sit amet.</p> <div class="clearfix"></div> </div> </div> </div> <div class="col-md-3 col-sm-6 col-xs-12"> <div class="birds"> <figure class="effect-phoebe"> <img src="{{ asset('images/birds/1.jpg') }}" alt=""/> <figcaption> <p> <a class="nivo-lightbox" href="{{ asset('images/birds/1.jpg') }}" title="This is an image title"><i class="fa fa-search effect-3"></i></a> </p> </figcaption> </figure> <div class="clearfix"></div> <div class="birds-content"> <h4 data-toggle="tooltip" data-placement="top" title="Lorem ipsum">Lorem ipsum<br> <small>Odontophoridae</small></h4> <p>Lorem ipsum dolor sit amet.</p> <div class="clearfix"></div> </div> </div> </div> </div> <div class="mb-20"></div> <div class="row"> <div class="col-md-12 text-center"> <ul class="pagination"> <li><a href="#">«</a></li> <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li> <li><a href="#">2</a></li> <li><a href="#">3</a></li> <li><a href="#">»</a></li> </ul> </div> </div> </div>');
+
+        });
+
+        $('#attente').on('click', function () {
+            $('#saisie-visu').remove();
+            $('#profil-visu').remove();
+
+            $('#attente').attr('disabled','disabled');
+            $('#profil').removeAttr('disabled');
+            $('#saisie').removeAttr('disabled');
+
+            $('#content').append('<div class="row" id="attente-visu"> <div class="row"> <div class="col-md-3 col-sm-6 col-xs-12"> <div class="birds"> <figure class="effect-phoebe"> <img src="{{ asset('images/birds/1.jpg') }}" alt=""/> <figcaption> <p> <a class="nivo-lightbox" href="{{ asset('images/birds/1.jpg') }}" title="This is an image title"><i class="fa fa-search effect-3"></i></a> </p> </figcaption> </figure> <div class="clearfix"></div> <div class="birds-content"> <h4 data-toggle="tooltip" data-placement="top" title="Lorem ipsum">Lorem ipsum<br> <small>Odontophoridae</small></h4> <p>Lorem ipsum dolor sit amet.</p> <div class="clearfix"></div> </div> </div> </div> <div class="col-md-3 col-sm-6 col-xs-12"> <div class="birds"> <figure class="effect-phoebe"> <img src="{{ asset('images/birds/1.jpg') }}" alt=""/> <figcaption> <p> <a class="nivo-lightbox" href="{{ asset('images/birds/1.jpg') }}" title="This is an image title"><i class="fa fa-search effect-3"></i></a> </p> </figcaption> </figure> <div class="clearfix"></div> <div class="birds-content"> <h4 data-toggle="tooltip" data-placement="top" title="Lorem ipsum">Lorem ipsum<br> <small>Odontophoridae</small></h4> <p>Lorem ipsum dolor sit amet.</p> <div class="clearfix"></div> </div> </div> </div> <div class="col-md-3 col-sm-6 col-xs-12"> <div class="birds"> <figure class="effect-phoebe"> <img src="{{ asset('images/birds/1.jpg') }}" alt=""/> <figcaption> <p> <a class="nivo-lightbox" href="{{ asset('images/birds/1.jpg') }}" title="This is an image title"><i class="fa fa-search effect-3"></i></a> </p> </figcaption> </figure> <div class="clearfix"></div> <div class="birds-content"> <h4 data-toggle="tooltip" data-placement="top" title="Lorem ipsum">Lorem ipsum<br> <small>Odontophoridae</small></h4> <p>Lorem ipsum dolor sit amet.</p> <div class="clearfix"></div> </div> </div> </div> <div class="col-md-3 col-sm-6 col-xs-12"> <div class="birds"> <figure class="effect-phoebe"> <img src="{{ asset('images/birds/1.jpg') }}" alt=""/> <figcaption> <p> <a class="nivo-lightbox" href="{{ asset('images/birds/1.jpg') }}" title="This is an image title"><i class="fa fa-search effect-3"></i></a> </p> </figcaption> </figure> <div class="clearfix"></div> <div class="birds-content"> <h4 data-toggle="tooltip" data-placement="top" title="Lorem ipsum">Lorem ipsum<br> <small>Odontophoridae</small></h4> <p>Lorem ipsum dolor sit amet.</p> <div class="clearfix"></div> </div> </div> </div> </div> <div class="row"> <div class="col-md-3 col-sm-6 col-xs-12"> <div class="birds"> <figure class="effect-phoebe"> <img src="{{ asset('images/birds/1.jpg') }}" alt=""/> <figcaption> <p> <a class="nivo-lightbox" href="{{ asset('images/birds/1.jpg') }}" title="This is an image title"><i class="fa fa-search effect-3"></i></a> </p> </figcaption> </figure> <div class="clearfix"></div> <div class="birds-content"> <h4 data-toggle="tooltip" data-placement="top" title="Lorem ipsum">Lorem ipsum<br> <small>Odontophoridae</small></h4> <p>Lorem ipsum dolor sit amet.</p> <div class="clearfix"></div> </div> </div> </div> <div class="col-md-3 col-sm-6 col-xs-12"> <div class="birds"> <figure class="effect-phoebe"> <img src="{{ asset('images/birds/1.jpg') }}" alt=""/> <figcaption> <p> <a class="nivo-lightbox" href="{{ asset('images/birds/1.jpg') }}" title="This is an image title"><i class="fa fa-search effect-3"></i></a> </p> </figcaption> </figure> <div class="clearfix"></div> <div class="birds-content"> <h4 data-toggle="tooltip" data-placement="top" title="Lorem ipsum">Lorem ipsum<br> <small>Odontophoridae</small></h4> <p>Lorem ipsum dolor sit amet.</p> <div class="clearfix"></div> </div> </div> </div> <div class="col-md-3 col-sm-6 col-xs-12"> <div class="birds"> <figure class="effect-phoebe"> <img src="{{ asset('images/birds/1.jpg') }}" alt=""/> <figcaption> <p> <a class="nivo-lightbox" href="{{ asset('images/birds/1.jpg') }}" title="This is an image title"><i class="fa fa-search effect-3"></i></a> </p> </figcaption> </figure> <div class="clearfix"></div> <div class="birds-content"> <h4 data-toggle="tooltip" data-placement="top" title="Lorem ipsum">Lorem ipsum<br> <small>Odontophoridae</small></h4> <p>Lorem ipsum dolor sit amet.</p> <div class="clearfix"></div> </div> </div> </div> <div class="col-md-3 col-sm-6 col-xs-12"> <div class="birds"> <figure class="effect-phoebe"> <img src="{{ asset('images/birds/1.jpg') }}" alt=""/> <figcaption> <p> <a class="nivo-lightbox" href="{{ asset('images/birds/1.jpg') }}" title="This is an image title"><i class="fa fa-search effect-3"></i></a> </p> </figcaption> </figure> <div class="clearfix"></div> <div class="birds-content"> <h4 data-toggle="tooltip" data-placement="top" title="Lorem ipsum">Lorem ipsum<br> <small>Odontophoridae</small></h4> <p>Lorem ipsum dolor sit amet.</p> <div class="clearfix"></div> </div> </div> </div> </div> <div class="row"> <div class="col-md-3 col-sm-6 col-xs-12"> <div class="birds"> <figure class="effect-phoebe"> <img src="{{ asset('images/birds/1.jpg') }}" alt=""/> <figcaption> <p> <a class="nivo-lightbox" href="{{ asset('images/birds/1.jpg') }}" title="This is an image title"><i class="fa fa-search effect-3"></i></a> </p> </figcaption> </figure> <div class="clearfix"></div> <div class="birds-content"> <h4 data-toggle="tooltip" data-placement="top" title="Lorem ipsum">Lorem ipsum<br> <small>Odontophoridae</small></h4> <p>Lorem ipsum dolor sit amet.</p> <div class="clearfix"></div> </div> </div> </div> <div class="col-md-3 col-sm-6 col-xs-12"> <div class="birds"> <figure class="effect-phoebe"> <img src="{{ asset('images/birds/1.jpg') }}" alt=""/> <figcaption> <p> <a class="nivo-lightbox" href="{{ asset('images/birds/1.jpg') }}" title="This is an image title"><i class="fa fa-search effect-3"></i></a> </p> </figcaption> </figure> <div class="clearfix"></div> <div class="birds-content"> <h4 data-toggle="tooltip" data-placement="top" title="Lorem ipsum">Lorem ipsum<br> <small>Odontophoridae</small></h4> <p>Lorem ipsum dolor sit amet.</p> <div class="clearfix"></div> </div> </div> </div> <div class="col-md-3 col-sm-6 col-xs-12"> <div class="birds"> <figure class="effect-phoebe"> <img src="{{ asset('images/birds/1.jpg') }}" alt=""/> <figcaption> <p> <a class="nivo-lightbox" href="{{ asset('images/birds/1.jpg') }}" title="This is an image title"><i class="fa fa-search effect-3"></i></a> </p> </figcaption> </figure> <div class="clearfix"></div> <div class="birds-content"> <h4 data-toggle="tooltip" data-placement="top" title="Lorem ipsum">Lorem ipsum<br> <small>Odontophoridae</small></h4> <p>Lorem ipsum dolor sit amet.</p> <div class="clearfix"></div> </div> </div> </div> <div class="col-md-3 col-sm-6 col-xs-12"> <div class="birds"> <figure class="effect-phoebe"> <img src="{{ asset('images/birds/1.jpg') }}" alt=""/> <figcaption> <p> <a class="nivo-lightbox" href="{{ asset('images/birds/1.jpg') }}" title="This is an image title"><i class="fa fa-search effect-3"></i></a> </p> </figcaption> </figure> <div class="clearfix"></div> <div class="birds-content"> <h4 data-toggle="tooltip" data-placement="top" title="Lorem ipsum">Lorem ipsum<br> <small>Odontophoridae</small></h4> <p>Lorem ipsum dolor sit amet.</p> <div class="clearfix"></div> </div> </div> </div> </div> <div class="mb-20"></div> <div class="row"> <div class="col-md-12 text-center"> <ul class="pagination"> <li><a href="#">«</a></li> <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li> <li><a href="#">2</a></li> <li><a href="#">3</a></li> <li><a href="#">»</a></li> </ul> </div> </div> </div>');
+
+        });
+    </script>
+{% endblock %}

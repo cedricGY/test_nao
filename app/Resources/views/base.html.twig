@@ -68,22 +68,22 @@
 
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="#">Accueil</a></li>
+                        <li><a href="{{ path('accueil') }}">Accueil</a></li>
                         <li class="active dropdown"><a href="#" class="dropdown-toggle js-activated" data-toggle="dropdown" data-submenu>Observations <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Saisir observations</a></li>
-                                <li><a href="#">Validations des saisies <i class="fa fa-lock"></i></a></li>
+                                <li><a href="{{ path('saisir_observations') }}">Saisir observations</a></li>
+                                <li><a href="{{ path('liste_validations_saisies') }}">Validations des saisies <i class="fa fa-lock"></i></a></li>
                             </ul>
                         </li>
                         <li class="dropdown"><a href="#" class="dropdown-toggle js-activated" data-toggle="dropdown">Recherche d'espèces <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Consulter la carte</a></li>
-                                <li><a href="#">Consulter les fiches</a></li>
+                                <li><a href="{{ path('carte') }}">Consulter la carte</a></li>
+                                <li><a href="{{ path('consultation_fiche') }}">Consulter les fiches</a></li>
                                 <li><a href="#" type="button" data-toggle="modal" data-target=".modal-telechargement">Exporter des données <i class="fa fa-lock"></i></a></li>
                             </ul>
                         </li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">A propos</a></li>
+                        <li><a href="{{ path('contact') }}">Contact</a></li>
+                        <li><a href="{{ path('apropos') }}">A propos</a></li>
                         <li><a href="#" type="button" data-toggle="modal" data-target=".modal-connexion">Connexion</a></li>
                     </ul>
                 </div>
@@ -116,6 +116,8 @@
             </div>
         </div>
     </div>
+
+
 
     {#Modal recherche#}
     <div class="modal fade modal-recherche" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
@@ -160,7 +162,7 @@
                             </fieldset>
                             <ul class="icon-arrow-list">
                                 <li><div class="form-group"><input type="checkbox"> Se souvenir de moi ?</div></li>
-                                <li><a href="#">Mot de passe oublié ?</a></li>
+                                <li><a href="#" data-toggle="modal" data-target=".modal-mot-de-passe">Mot de passe oublié ?</a></li>
                                 <li><button type="button" class="btn btn btn-theme pull-right">Connexion</button></li>
                             </ul>
                         </div>
@@ -170,6 +172,32 @@
                         <h4>Pas encore inscrit ?</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus eligendi explicabo laborum libero minima modi!</p>
                         <button type="button" data-toggle="modal"  data-target=".modal-inscription" class="btn btn btn-theme">Inscription</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {#Modal mot de passe oublié#}
+    <div class="modal fade modal-mot-de-passe" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div id="modal-row-connexion">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4>Demande de mot de passe</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-center">Ducimus eligendi explicabo laborum libero minima modi!</p>
+                        <div class="form-group">
+                            <label>Email *</label>
+                            <input class="form-control" type="text" name="email" required>
+                        </div>
+                        <button type="button" class="btn btn btn-theme">
+                            Envoyer
+                        </button>
+
                     </div>
 
                 </div>
@@ -192,7 +220,7 @@
                         <div class="mb-20">
                             <fieldset>
                                 <div class="form-group">
-                                    <label>Nom d\'utilisateur</label>
+                                    <label>Nom d'utilisateur</label>
                                     <input class="form-control" type="text" name="username" placeholder="Ex: Paul86" required>
                                 </div>
                                 <div class="form-group">
@@ -299,7 +327,7 @@
 
                 <div class="col-md-4">
                     <ul class="copyright-link">
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="{{ path('contact') }}">Contact</a></li>
                     </ul>
                 </div>
             </div>
