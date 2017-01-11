@@ -82,7 +82,7 @@
                                 <li><a href="#" type="button" data-toggle="modal" data-target=".modal-telechargement">Exporter des données <i class="fa fa-lock"></i></a></li>
                             </ul>
                         </li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="{{ path('contact') }}">Contact</a></li>
                         <li><a href="#">A propos</a></li>
                         <li><a href="#" type="button" data-toggle="modal" data-target=".modal-connexion">Connexion</a></li>
                     </ul>
@@ -108,7 +108,7 @@
                     </div>
                     <div class="modal-body text-center">
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus eligendi explicabo laborum libero minima modi!</p>
-                        <button id="export" type="button" class="btn btn btn-theme center-block pr-50 pl-50">Télécharger</button>
+                        <a href="{{ path('download') }}" id="export" type="button" class="btn btn btn-theme center-block pr-50 pl-50">Télécharger</a>
                         <p><em>(Format csv)</em></p>
                     </div>
                 </div>

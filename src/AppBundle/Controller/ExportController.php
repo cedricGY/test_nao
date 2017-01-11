@@ -4,16 +4,28 @@ namespace AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 class ExportController extends Controller
 {
+    /**
+     * @Route("/", name="accueil")
+     * @Template("default/index.html.twig")
+     */
+    public function indexAction()
+    {
+
+    }
+    /**
+     * @return Response
+     * @Route("/download", name="download")
+     */
     public function exportAction()
     {
-        $connectToDb = $this->get('database_connection');
+        $export = $this->get('app.export')->exportService();
 
-        $datas = $connectToDb->query("SELECT * FROM tbl_name");
-
-        $fileToDownload = $this->get('app.export')->buildDatas($datas);
-        return new Response($fileToDownload);
+        //return $this->redirectToRoute('accueil');
+        return $export;
     }
 }

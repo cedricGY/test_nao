@@ -9,4 +9,5 @@ services:
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
 
     app.export:
-        class: AppBundle\Exporter
+        class: AppBundle\Service\Export
+        arguments: ["@doctrine.orm.entity_manager"]
